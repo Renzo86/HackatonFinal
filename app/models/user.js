@@ -6,28 +6,32 @@ module.exports = (sequelize, Sequelize) => {
             primaryKey: true
           },
           idTypIdeDoc: {
-            type: Sequelize.INTEGER
+            type: Sequelize.INTEGER,
+            allowNull: false
           },
           nroIdeDoc: {
-            type: Sequelize.STRING
+            type: Sequelize.STRING,
+            allowNull: false
           },
-          names: {
-            type: Sequelize.STRING
-          },
-          firstName: {
-            type: Sequelize.STRING
+          name: {
+            type: Sequelize.STRING,
+            allowNull: false
           },
           lastName: {
-            type: Sequelize.STRING
+            type: Sequelize.STRING,
+            allowNull: false
           },
           email: {
-            type: Sequelize.STRING
+            type: Sequelize.STRING,
+            allowNull: false
           },
           phone: {
-            type: Sequelize.STRING
+            type: Sequelize.STRING,
+            allowNull: false
           },
           password: {
-            type: Sequelize.STRING
+            type: Sequelize.STRING,
+            allowNull: false
           }
       },
       {
