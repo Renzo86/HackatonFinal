@@ -6,28 +6,34 @@ module.exports = (sequelize, Sequelize) => {
             primaryKey: true
           },
           idSale: {
-            type: Sequelize.INTEGER
+            type: Sequelize.INTEGER,
+            allowNull: false
           },
           idProduct: {
-            type: Sequelize.INTEGER
+            type: Sequelize.INTEGER,
+            allowNull: false
           },
           quantity: {
-            type: Sequelize.INTEGER
+            type: Sequelize.INTEGER,
+            allowNull: false
           },
           IGV: {
-            type: Sequelize.DECIMAL
+            type: Sequelize.DECIMAL(8,2)
           },
           valSale: {
-            type: Sequelize.DECIMAL
+            type: Sequelize.DECIMAL(8,2),
+            allowNull: false
           },
           valIGV: {
-            type: Sequelize.DECIMAL
+            type: Sequelize.DECIMAL(8,2)
           },
           valSubTot: {
-            type: Sequelize.DECIMAL
+            type: Sequelize.DECIMAL(8,2),
+            allowNull: false
           },
           valTotal: {
-            type: Sequelize.DECIMAL
+            type: Sequelize.DECIMAL(8,2),
+            allowNull: false
           }
       },
       {

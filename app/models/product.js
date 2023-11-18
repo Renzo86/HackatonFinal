@@ -6,16 +6,20 @@ module.exports = (sequelize, Sequelize) => {
             primaryKey: true
           },
           idCategory: {
-            type: Sequelize.INTEGER
+            type: Sequelize.INTEGER,
+            allowNull: false
           },
           description: {
-            type: Sequelize.STRING
+            type: Sequelize.STRING,
+            allowNull: false
           },
           price: {
-            type: Sequelize.DECIMAL
+            type: Sequelize.DECIMAL(8,2),
+            allowNull: false
           },
           stock: {
-            type: Sequelize.INTEGER
+            type: Sequelize.INTEGER,
+            allowNull: false
           }
       },
       {

@@ -6,28 +6,34 @@ module.exports = (sequelize, Sequelize) => {
             primaryKey: true
           },
           idUser: {
-            type: Sequelize.INTEGER
+            type: Sequelize.INTEGER,
+            allowNull: false
           },
           idTypDoc: {
-            type: Sequelize.INTEGER
+            type: Sequelize.INTEGER,
+            allowNull: false
           },
           serie: {
-            type: Sequelize.STRING
+            type: Sequelize.STRING(4)
           },
           number: {
-            type: Sequelize.STRING
+            type: Sequelize.STRING(8)
           },
           mtoSale: {
-            type: Sequelize.DECIMAL
+            type: Sequelize.DECIMAL(8, 2),
+            allowNull: false
           },
           mtoIGV: {
-            type: Sequelize.DECIMAL
+            type: Sequelize.DECIMAL(8, 2),
+            allowNull: false
           },
           mtoSubTot: {
-            type: Sequelize.DECIMAL
+            type: Sequelize.DECIMAL(8, 2),
+            allowNull: false
           },
           mtoTotal: {
-            type: Sequelize.DECIMAL
+            type: Sequelize.DECIMAL(8, 2),
+            allowNull: false
           }
       },
       {

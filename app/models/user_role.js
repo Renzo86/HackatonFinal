@@ -6,10 +6,12 @@ module.exports = (sequelize, Sequelize) => {
             primaryKey: true
           },
           idUser: {
-            type: Sequelize.INTEGER
+            type: Sequelize.INTEGER,
+            allowNull: false
           },
           idRole: {
-            type: Sequelize.INTEGER
+            type: Sequelize.INTEGER,
+            allowNull: false
           }
       },
       {
