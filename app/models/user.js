@@ -7,7 +7,8 @@ module.exports = (sequelize, Sequelize) => {
           },
           idTypIdeDoc: {
             type: Sequelize.INTEGER,
-            allowNull: false
+            allowNull: false,
+            defaultValue: 1 // Valor predeterminado
           },
           nroIdeDoc: {
             type: Sequelize.STRING,

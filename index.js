@@ -41,6 +41,9 @@ app.get("/", (req, res) => {
 // routes
 require('./app/routes/auth')(app);
 require('./app/routes/user')(app);
+require('./app/routes/role')(app);
+require('./app/routes/type_document')(app);
+require('./app/routes/type_identity_document')(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 3000;

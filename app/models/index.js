@@ -26,7 +26,6 @@ const config = require("../config/db.js");
     db.typeDocument = require("./type_document.js")(sequelize, Sequelize);
     db.user = require("./user.js")(sequelize, Sequelize);
     db.role = require("./role.js")(sequelize, Sequelize);
-    db.userRole = require("./user_role.js")(sequelize, Sequelize);
     db.category = require("./category.js")(sequelize, Sequelize);
     db.product = require("./product.js")(sequelize, Sequelize);
     db.sale = require("./sale.js")(sequelize, Sequelize);
@@ -36,12 +35,12 @@ const config = require("../config/db.js");
     db.user.belongsTo(db.typeIdentityDocument, {      
       foreignKey: "idTypIdeDoc",
     });
-    db.userRole.belongsTo(db.user, {      
-      foreignKey: "idUser",
+    db.user.belongsToMany(db.role, {      
+      through: "UserRole",
     });
-    db.userRole.belongsTo(db.role, {    
-      foreignKey: "idRole",
-    });   
+    db.role.belongsToMany(db.user, {    
+      through: "UserRole",
+    });  
     db.product.belongsTo(db.category, {    
       foreignKey: 'idCategory',
     });

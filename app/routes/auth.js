@@ -13,4 +13,7 @@ verifySignUp.checkDuplicateUsernameOrEmail,
 verifySignUp.checkRolesExisted],
 controller.signup);
 app.post("/api/auth/signin", controller.signin);
+app.get('/api/auth/logout', function (req, res) {
+    res.redirect('/api/auth/signin');
+});
 };
