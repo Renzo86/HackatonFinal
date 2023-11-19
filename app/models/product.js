@@ -17,9 +17,14 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.DECIMAL(8,2),
             allowNull: false
           },
-          stock: {
+          /*stock: {
             type: Sequelize.INTEGER,
             allowNull: false
+          },*/
+          image: {
+            type: Sequelize.STRING,
+            allowNull: false,
+            defaultValue: "none.png" 
           }
       },
       {

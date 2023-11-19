@@ -17,7 +17,7 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.INTEGER,
             allowNull: false
           },
-          IGV: {
+          /*IGV: {
             type: Sequelize.DECIMAL(8,2)
           },
           valSale: {
@@ -30,7 +30,7 @@ module.exports = (sequelize, Sequelize) => {
           valSubTot: {
             type: Sequelize.DECIMAL(8,2),
             allowNull: false
-          },
+          },*/
           valTotal: {
             type: Sequelize.DECIMAL(8,2),
             allowNull: false

@@ -1,12 +1,11 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+var path = require('path');
 const cors = require("cors");
 const swaggerUi = require('swagger-ui-express')
 const swaggerFile = require('./swagger_output.json')
 
 const app = express();
-
-
 
 app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
@@ -24,7 +23,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // database
 const db = require("./app/models");
-const Role = db.role;
 
 db.sequelize.sync();
 // force: true will drop the table if it already exists
@@ -33,17 +31,23 @@ db.sequelize.sync();
 //   initial();
 // });
 
-// simple route
-app.get("/", (req, res) => {
-  res.json({ message: "Express API is Ready" });
-});
+// obtiene la ruta del directorio publico donde se encuentran los elementos estaticos (css, js).
+var assetsPath = path.resolve(__dirname, 'front', 'assets'); //path.join(__dirname, 'public'); también puede ser una opción
 
-// routes
+// Para que los archivos estaticos queden disponibles.
+app.use(express.static(assetsPath));
+
+// routes backend
 require('./app/routes/auth')(app);
 require('./app/routes/user')(app);
 require('./app/routes/role')(app);
 require('./app/routes/type_document')(app);
 require('./app/routes/type_identity_document')(app);
+require('./app/routes/culqi')(app);
+require('./app/routes/product')(app);
+
+// routes frontend
+require('./front/routes/front')(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 3000;

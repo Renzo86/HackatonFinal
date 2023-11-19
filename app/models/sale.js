@@ -19,7 +19,7 @@ module.exports = (sequelize, Sequelize) => {
           number: {
             type: Sequelize.STRING(8)
           },
-          mtoSale: {
+          /*mtoSale: {
             type: Sequelize.DECIMAL(8, 2),
             allowNull: false
           },
@@ -30,10 +30,18 @@ module.exports = (sequelize, Sequelize) => {
           mtoSubTot: {
             type: Sequelize.DECIMAL(8, 2),
             allowNull: false
-          },
+          },*/
           mtoTotal: {
             type: Sequelize.DECIMAL(8, 2),
             allowNull: false
+          },
+          tokenCulqiUser: {
+            type: Sequelize.STRING,
+            allowNull: true
+          },
+          tokenCulqiOrder: {
+            type: Sequelize.STRING,
+            allowNull: true
           }
       },
       {
