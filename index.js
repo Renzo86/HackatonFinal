@@ -48,6 +48,8 @@ require('./app/routes/type_identity_document')(app);
 require('./app/routes/culqi')(app);
 require('./app/routes/product')(app);
 require('./app/routes/category')(app);
+// API MIS COMPRAS
+require('./app/routes/sale')(app);
 
 // routes frontend
 require('./front/routes/front')(app);
