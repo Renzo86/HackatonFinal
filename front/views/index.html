@@ -29,10 +29,23 @@
 				</button>
 
 				<div class="collapse navbar-collapse" id="navbarsFurni">
-					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-						<li class="nav-item active">
-							<a class="nav-link" href="/">Home</a>
-						</li>										
+					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0" id="links">
+						
+							
+							<script>
+								const token = localStorage.getItem('token')
+								if(token!=null)
+								{
+									let links = '<li class="nav-item active" ><a class="nav-link" href="/">Home</a></li><li class="nav-item" ><a class="nav-link" href="/">Mis compras</a></li>'
+									document.getElementById('links').innerHTML = links							
+								}
+								else
+								{
+									let links = '<li class="nav-item active" ><a class="nav-link" href="/">Home</a></li>'
+									document.getElementById('links').innerHTML = links	
+								}
+							</script>
+																
 					</ul>
 
 					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">

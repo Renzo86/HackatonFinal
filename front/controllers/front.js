@@ -6,7 +6,7 @@ module.exports = {
     },
 
     async login(req,res) {
-        res.sendFile(path.resolve(__dirname,'..', 'views', 'login.html') );
+        res.sendFile(path.resolve(__dirname,'..', 'views', 'login.html') );        
     },
 
     async cart(req,res) {
