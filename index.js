@@ -51,6 +51,6 @@ require('./front/routes/front')(app);
 
 // set port, listen for requests
 app.listen(8080, () => {
-  console.log(`Server is running on port ${PORT}.`);
+  console.log(`Server is running on port 8080.`);
 });
 
