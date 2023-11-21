@@ -118,7 +118,8 @@
 		inicio()		
 
 		function inicio() {
-			axios.get('http://localhost:3000/api/product/get/all')
+			//axios.get('http://localhost:3000/api/product/get/all')
+			axios.get('https://webhackatonfinal202307.azurewebsites.net/api/product/get/all')
 			.then(function (response) {
 				var data = response.data.data    				
 				var row = ''  
