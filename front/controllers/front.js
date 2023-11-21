@@ -5,6 +5,10 @@ module.exports = {
         res.sendFile(path.resolve(__dirname,'..', 'views', 'index.html') );
     },
 
+    async login(req,res) {
+        res.sendFile(path.resolve(__dirname,'..', 'views', 'login.html') );
+    },
+
     async cart(req,res) {
         res.sendFile(path.resolve(__dirname,'..', 'views', 'cart.html') );
     },
