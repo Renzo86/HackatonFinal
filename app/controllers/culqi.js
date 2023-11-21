@@ -20,7 +20,7 @@ module.exports = {
 
             //SI SE REGISTRO LA VENTA EN CULQI, PROCEDEMOS A INSERTAR EN NUESTRA TABLA
             //INSERTAR EN SALE
-            const sale = await saleModel.create({idUser: 1, idTypDoc: 1, serie: '1', number: '1', mtoTotal: req.body.amount/100, tokenCulqiUser: req.body.source_id, tokenCulqiOrder: charge.id})
+            const sale = await saleModel.create({idUser: req.body.idUser, idTypDoc: 1, serie: '1', number: '1', mtoTotal: req.body.amount/100, tokenCulqiUser: req.body.source_id, tokenCulqiOrder: charge.id})
 
             //INSERTAR SALE_DATAIL
             resultSaleDetail= detail.map( async (item, index) => {   

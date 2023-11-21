@@ -14,7 +14,7 @@
 
   <meta name="description" content="" />
   <meta name="keywords" content="bootstrap, bootstrap4" />
-
+  <script src="/config/config.js"></script>
 		<!-- Bootstrap CSS -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -23,7 +23,7 @@
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="https://checkout.culqi.com/js/v4"></script>
 		<title>Hackaton Final</title>
-	</head>
+</head>
 
 	<body>
 
@@ -181,6 +181,10 @@
 			{  
 				// ¡Objeto Token creado exitosamente!
 				const token = Culqi.token.id;      
+
+				//OBTENER EL ID DEL USUARIO LO CUAL LUEGO SE DEBE MANEJAR CON EL TOKEN
+				let idUser = localStorage.getItem('idUser') || 2
+
 				//OBTENER EL CARRITO CABECERA
 				let dataCart = localStorage.getItem('cart')
 				let cart = dataCart=='' ? [] : JSON.parse(dataCart)	     
@@ -191,6 +195,7 @@
 
 				
 			    axios.post(server+'api/culqi/test', {
+					idUser: idUser,
 					amount: Number(cart.total)*100,
 					currency_code: 'PEN',
 					email: 'info@soijme.com', //CAMBIAR CADA VEZ QUE SALGA EL ERROR DE QUE SUPERO LAS CONSULTAS CON ESE CORREO, SE HARA DINÁMICO
