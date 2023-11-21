@@ -45,6 +45,7 @@ require('./app/routes/type_document')(app);
 require('./app/routes/type_identity_document')(app);
 require('./app/routes/culqi')(app);
 require('./app/routes/product')(app);
+require('./app/routes/category')(app);
 
 // routes frontend
 require('./front/routes/front')(app);
