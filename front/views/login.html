@@ -59,7 +59,8 @@
 			axios.post(server+'api/auth/signin', {email: email, password: password})
 			.then(function (response) {
                 const data = response.data
-                localStorage.setItem('token', data.accessToken)         
+                localStorage.setItem('token', data.accessToken) 
+                localStorage.setItem('idUser', data.id)         
                 window.location.href="/checkout"     
 			})
 			.catch(function (error) {
