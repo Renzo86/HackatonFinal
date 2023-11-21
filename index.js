@@ -10,7 +10,7 @@ const app = express();
 app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
 var corsOptions = {
-  origin: "http://localhost:3000"
+  origin: "https://webhackatonfinal202307.azurewebsites.net"
 };
 
 app.use(cors(corsOptions));
@@ -50,7 +50,7 @@ require('./app/routes/product')(app);
 require('./front/routes/front')(app);
 
 // set port, listen for requests
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });

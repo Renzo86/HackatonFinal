@@ -1,7 +1,7 @@
 module.exports = {
-    HOST: "localhost",
-    USER: "root",
-    PASSWORD: "",
+    HOST: "webhackatonfinal202307-server.mysql.database.azure.com",
+    USER: "hsvnimwiox",
+    PASSWORD: "N4OGX4H70415WY72$",
     DB: "final",
     dialect: "mysql",
     pool: {
