@@ -50,8 +50,7 @@ require('./app/routes/product')(app);
 require('./front/routes/front')(app);
 
 // set port, listen for requests
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
+app.listen(8080, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
 
