@@ -10,8 +10,9 @@ const app = express();
 app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
 var corsOptions = {
-  origin: "https://webhackatonfinal202307.azurewebsites.net"
+  origin: process.env['SERVER']
 };
+
 
 app.use(cors(corsOptions));
 
@@ -36,6 +37,7 @@ var assetsPath = path.resolve(__dirname, 'front', 'assets'); //path.join(__dirna
 
 // Para que los archivos estaticos queden disponibles.
 app.use(express.static(assetsPath));
+
 
 // routes backend
 require('./app/routes/auth')(app);

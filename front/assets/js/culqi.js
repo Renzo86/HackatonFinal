@@ -1,4 +1,4 @@
-Culqi.publicKey = "pk_test_1916e2a75d4efdcb"; ///si tiene forma de sacarlo desde .env sería genial
+Culqi.publicKey = publicKeyCulqi ///si tiene forma de sacarlo desde .env sería genial
 
 Culqi.options(
     {

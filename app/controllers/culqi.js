@@ -3,8 +3,8 @@ const sale_detailModel      = require('../models').saleDetail;
 const Culqi = require('culqi-node');
 //INICIALIZAMOS CULQI
 const culqi = new Culqi({
-    privateKey: "sk_test_546ecc649f07624b",   //SI ALGUÍÉN CONOCE DE COMO PUEDO JALAR ESE DATO DEL ENV SERIA GENIAL
-    publicKey: "pk_test_1916e2a75d4efdcb",  //SI ALGUÍÉN CONOCE DE COMO PUEDO JALAR ESE DATO DEL ENV SERIA GENIAL
+    privateKey: process.env['PRIVATE_KEY_CULQI'] || "sk_test_546ecc649f07624b",   //SI ALGUÍÉN CONOCE DE COMO PUEDO JALAR ESE DATO DEL ENV SERIA GENIAL
+    publicKey: process.env['PUBLIC_KEY_CULQI'] || "pk_test_1916e2a75d4efdcb",  //SI ALGUÍÉN CONOCE DE COMO PUEDO JALAR ESE DATO DEL ENV SERIA GENIAL
     pciCompliant: true,    
 }); 
 module.exports = { 

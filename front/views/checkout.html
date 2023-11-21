@@ -189,8 +189,8 @@
 				let data = localStorage.getItem('cart_detail')
 				let cart_detail = data=='' || data==null ? [] : JSON.parse(data)	
 
-				//axios.post('http://localhost:3000/api/culqi/test', {
-			    axios.post('https://webhackatonfinal202307.azurewebsites.net/api/culqi/test', {
+				
+			    axios.post(server+'api/culqi/test', {
 					amount: Number(cart.total)*100,
 					currency_code: 'PEN',
 					email: 'info@soijme.com', //CAMBIAR CADA VEZ QUE SALGA EL ERROR DE QUE SUPERO LAS CONSULTAS CON ESE CORREO, SE HARA DINÁMICO
