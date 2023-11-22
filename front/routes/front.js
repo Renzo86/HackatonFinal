@@ -5,4 +5,5 @@ module.exports = function(app) {
     app.get("/cart", frontController.cart);
     app.get("/checkout", frontController.checkout);
     app.get("/success", frontController.success);
+    app.get("/signup", frontController.signup);
 };

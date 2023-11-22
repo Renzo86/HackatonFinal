@@ -1,0 +1,85 @@
+<!-- Define que el documento está bajo el estándar de HTML 5 -->
+<!doctype html>
+
+<!-- Representa la raíz de un documento HTML o XHTML. Todos los demás elementos deben ser descendientes de este elemento. -->
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Hackaton Final - Registro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/config/config.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Overpass&display=swap" rel="stylesheet">
+
+    <!-- Link hacia el archivo de estilos css -->
+    <link rel="stylesheet" href="css/signup.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="contenedor">
+        <div id="central">
+            <div id="signup">
+                <div class="titulo">
+                    Hackaton Final - Registro de Usuario
+                </div>
+                <form id="signupform">
+                    <label for="idTypIdeDoc">Tipo de Documento:</label>
+                    <select id="idTypIdeDoc" name="idTypIdeDoc">
+                        <option value="1">Tipo 1</option>
+                        <option value="2">Tipo 2</option>
+                        <option value="3">Tipo 3</option>
+                    </select>
+                    <input type="nroIdeDoc" id="nroIdeDoc" placeholder="Número de Identificación" required>
+                    <input type="name" id="name" placeholder="Nombre" required>
+                    <input type="firstName" id="firstName" placeholder="Primer Apellido" required>
+                    <input type="lastName" id="lastName" placeholder="Segundo Apellido" required>
+                    <input type="phone" id="phone" placeholder="Teléfono" required>
+                    <input type="email" id="email" placeholder="Correo Electrónico" required>
+                    <input type="password" id="password" placeholder="Contraseña" required>
+
+                    <button type="button" title="Registrar" name="Registrar" onclick="signup()">Registrar</button>
+                </form>
+            </div>
+            <div class="inferior">
+                <a href="/login">Volver al Inicio de Sesión</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function signup() {
+            let idTypIdeDoc = document.getElementById("idTypIdeDoc").value;
+            let nroIdeDoc = document.getElementById("nroIdeDoc").value;
+            let name = document.getElementById("name").value;
+            let firstName = document.getElementById("firstName").value;
+            let lastName = document.getElementById("lastName").value;
+            let phone = document.getElementById("phone").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            console.log(idTypIdeDoc);
+            axios.post(server + 'api/auth/signup', {
+                    idTypIdeDoc: idTypIdeDoc,
+                    nroIdeDoc: nroIdeDoc,
+                    name: name,
+                    firstName: firstName,
+                    lastName: lastName,
+                    email: email,
+                    phone: phone,
+                    password: password
+                })
+                .then(function(response) {
+                    // Manejar la respuesta del servidor si es necesario
+                    alert("Registro exitoso. Redirigiendo al inicio de sesión.");
+                    window.location.href = "/login";
+                })
+                .catch(function(error) {
+                    // Función para capturar el error
+                    alert("Error en el registro. Por favor, verifica los datos e intenta nuevamente.");
+                });
+        }
+    </script>
+</body>
+
+</html>

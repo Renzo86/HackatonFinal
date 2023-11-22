@@ -19,5 +19,9 @@ module.exports = {
 
     async success(req, res) {
         res.sendFile(path.resolve(__dirname,'..', 'views', 'success.html') );
+    },
+
+    async signup(req, res) {
+        res.sendFile(path.resolve(__dirname,'..', 'views', 'signup.html') );
     }
 }

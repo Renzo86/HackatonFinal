@@ -1,0 +1,65 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+#contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#central {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: 300px;
+}
+
+#signup {
+    text-align: center;
+}
+
+.titulo {
+    font-family: 'Overpass', sans-serif;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+#signupform {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+}
+
+select,
+input,
+button {
+    margin-top: 5px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+}
+
+.inferior {
+    margin-top: 10px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #4caf50;
+}

@@ -32,6 +32,7 @@
                         <input type="password" placeholder="Contraseña" id="password" required>
                         
                         <button type="button" title="Ingresar" name="Ingresar" onclick="login()">Ingresar</button>
+                        <button type="button" title="Singup" name="Singup" onclick="redirectToSignup()">Singup</button>
                     </form>                   
                 </div>
                 <div class="inferior">
@@ -68,5 +69,9 @@
 				alert("Datos incorrectos.")
 			})
 		}
+        function redirectToSignup() {
+            // Redirigir a signup.html
+            window.location.href = "/signup";
+        }
     </script>
 </html>
