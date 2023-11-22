@@ -126,7 +126,6 @@
 					row  += "<div class='product-item' onclick='addCart("+ JSON.stringify(data[i]) +")'>"
 					// Construir la URL completa para la imagen
 					var imageUrl = 'images/' + data[i].image;
-					alert(imageUrl);
 					row += '<img src="' + imageUrl + '" class="img-fluid product-thumbnail">';
 					row  += '<h3 class="product-title">'+data[i].description+'</h3>'
 					row  += '<strong class="product-price">S/. '+data[i].price+'</strong>'
