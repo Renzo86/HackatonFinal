@@ -34,9 +34,13 @@ db.sequelize.sync();
 
 // obtiene la ruta del directorio publico donde se encuentran los elementos estaticos (css, js).
 var assetsPath = path.resolve(__dirname, 'front', 'assets'); //path.join(__dirname, 'public'); también puede ser una opción
-
+var imagesPath = path.resolve(__dirname, 'front', 'images');
 // Para que los archivos estaticos queden disponibles.
 app.use(express.static(assetsPath));
+
+// Ejemplo de configuración de Express para servir archivos estáticos
+app.use(express.static(imagesPath));
+
 
 
 // routes backend
