@@ -50,6 +50,8 @@ require('./app/routes/product')(app);
 require('./app/routes/category')(app);
 // API MIS COMPRAS
 require('./app/routes/sale')(app);
+// API HOME
+require('./app/routes/home')(app);
 
 // routes frontend
 require('./front/routes/front')(app);
