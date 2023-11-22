@@ -39,7 +39,7 @@ var imagesPath = path.resolve(__dirname, 'front', 'images');
 app.use(express.static(assetsPath));
 
 // Ejemplo de configuración de Express para servir archivos estáticos
-app.use(express.static(imagesPath));
+app.use('/images', express.static(imagesPath));
 
 
 
