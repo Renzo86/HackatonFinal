@@ -28,4 +28,28 @@ module.exports = {
             })
         }
     },
+
+    async update (req, res) {
+        const id = req.params.id;
+      
+        await productModel.update(req.body, {
+          where: { id: id }
+        })
+          .then(num => {
+            if (num == 1) {
+              res.send({
+                message: "Product was updated successfully."
+              });
+            } else {
+              res.send({
+                message: `Cannot update Product with id=${id}. Maybe Product was not found or req.body is empty!`
+              });
+            }
+          })
+          .catch(err => {
+            res.status(500).send({
+              message: "Error updating product with id=" + id
+            });
+          });
+      },
 };
